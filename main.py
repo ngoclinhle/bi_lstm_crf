@@ -26,9 +26,9 @@ LEX = torchtext.data.Field(init_token="<bos>", eos_token="<eos>", batch_first=Tr
 POS_TAG = torchtext.data.Field(init_token="<bos>", eos_token="<eos>", batch_first=True,
                                unk_token=None, is_target=True)
 
-train = SejongDataset.splits(fields=(WORD, LEX, POS_TAG),
+train, valid = SejongDataset.splits(fields=(WORD, LEX, POS_TAG),
                                     train=train_file,
-                                    validation=None,
+                                    validation=valid_file,
                                     test=None,
                                     max_token=50)
 
